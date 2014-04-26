@@ -1,1 +1,44 @@
 /*-- MAIN SITE STYLES --*/
+
+body {
+	margin:0;
+	padding:none;
+}
+h1 {
+	font: bold 32pt arial;
+	text-align: center;
+}
+html {
+	background-color:lightgrey; 
+	margin:none;
+}
+li a { 
+	text-decoration: none;
+	color:slategrey;
+}
+.login {
+	text-align: center;
+}
+.nav {
+	float:right;
+	margin-right: 50px;
+}
+.nav li {
+	text-align: center;
+	list-style-type: none;
+	float:left;
+	width:80px;
+}
+.nav_bar {
+	color:slategrey;
+	height:50px;
+	line-height: 50px;
+	background-color: lightblue;
+	font: bold 13pt arial;
+}
+#content {
+	max-width: 1000px;
+	margin: 0 auto;
+	background-color: #E0F8F7;
+	min-height: 100%;
+}

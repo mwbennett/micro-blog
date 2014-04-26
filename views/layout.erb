@@ -6,8 +6,8 @@
 	<body>
 		<div id="container">
 			<div id="header">
-				<div class="nav">
-					<ul>
+				<div class="nav_bar">
+					<ul class="nav">
 						<li>
 							<a href="/">home</a>
 						</li>
@@ -18,17 +18,13 @@
 							<a href="/create">create</a>
 						</li>
 						<li>
-							<a href="/users">users</a>
-						</li>
-						<li>
-							<a href="/sign_up">sign up</a>
+							<a href="/signup">sign up</a>
 						</li>
 						<li>
 							<a href="/login">log in</a>
 						</li>
 					</ul>
 				</div>
-				<header>Welcome to MicroBlogger</header>
 			</div>
 			<div id="content">
 				<%= yield %> <!--this is where all the contents of home.erb get added-->
