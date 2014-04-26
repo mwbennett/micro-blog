@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/treeder/rack-flash.git
+  revision: 20e393cdce030f35422dba545a1fed91ed398b29
+  specs:
+    rack-flash3 (1.0.5)
+      rack
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -41,6 +48,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  rack-flash3!
   rake
   sinatra
   sinatra-activerecord (= 2.0.0.rc2)

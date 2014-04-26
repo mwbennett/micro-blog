@@ -28,6 +28,7 @@
 			</div>
 			<div id="content">
 				<%= yield %> <!--this is where all the contents of home.erb get added-->
+				<%=flash[:notice] if flash[:notice] %>
 			</div>
 			<div id="footer">
 			</div>

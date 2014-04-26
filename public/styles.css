@@ -6,6 +6,8 @@ body {
 }
 h1 {
 	font: bold 32pt arial;
+	margin: 0;
+	padding: 50px 0 50px 0;
 	text-align: center;
 }
 html {
@@ -15,6 +17,9 @@ html {
 li a { 
 	text-decoration: none;
 	color:slategrey;
+}
+.create {
+	text-align:center;
 }
 .login {
 	text-align: center;
@@ -32,7 +37,6 @@ li a {
 .nav_bar {
 	color:slategrey;
 	height:50px;
-	line-height: 50px;
 	background-color: lightblue;
 	font: bold 13pt arial;
 }
