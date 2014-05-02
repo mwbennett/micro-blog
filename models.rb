@@ -3,13 +3,10 @@ class User < ActiveRecord::Base
 	has_many :comments
 	has_many :relationships
 
-	attr_accessor :first_name, :last_name, :username, :email, :password, :birthday
-end
-=begin
 	attr_accessor :errors
 
 	def valid?
-		unless first_name_valid? && last_name_valid? && email_valid? && username_valid? && password_valid?
+		unless self.first_name_valid? && self.last_name_valid? && self.email_valid? && self.username_valid? && self.password_valid?
 			return false
 		end		
 	end
@@ -41,36 +38,34 @@ end
 			return false
 		end
 	end 
-=end
+end
 
 class Post < ActiveRecord::Base 
 	belongs_to :user
 
-	attr_accessor :title, :body
-end
-=begin
 	attr_accessor :errors
 
 	def valid?
-		unless body_valid? && title_valid?
+		unless self.body_valid? && self.title_valid?
 			return false
 		end		
 	end
 
 	def body_valid?
 		if self.body.to_s.empty?
-			@errors[body] = "The blog post must contain a body"
+			@errors[body] = "The blog post must contain a body."
 			return false
 		end
 	end	
 
 	def title_valid?
 		if self.title.to_s.empty?
-			@errors[title] = "The blog post must contain a title"
+			@errors[title] = "The blog post must contain a title."
 			return false
 		end
 	end			
-=end
+
+end
 
 class Relationship < ActiveRecord::Base 
 	belongs_to :user

@@ -20,15 +20,25 @@
 						<li>
 							<a href="/signup">sign up</a>
 						</li>
-						<li>
-							<a href="/login">log in</a>
-						</li>
+						<% if current_user %>
+							<li>
+								<a href="/logout">log out</a>
+							</li>
+						<% else %>
+							<li>
+								<a href="/login">log in</a>
+							</li>
+						<% end %>
 					</ul>
 				</div>
 			</div>
 			<div id="content">
 				<%= yield %> <!--this is where all the contents of home.erb get added-->
-				<%=flash[:notice] if flash[:notice] %>
+				<% if flash[:notice] %>
+					<div class="notice">
+						<%= flash[:notice] %>
+					</div>
+				<% end %>
 			</div>
 			<div id="footer">
 			</div>

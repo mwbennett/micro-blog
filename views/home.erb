@@ -1,11 +1,13 @@
-<h1>Welcome to MicroBlogger</h1> 
+<h1><%= @current_user.first_name if @current_user %>Welcome to MicroBlogger
+</h1> 
 
 <ul>
 <% @posts.each do |post| %>
   <li>
     <h2><%= post.title %>
     <span><%= post.created_at.strftime("%d %b %Y") %></span>
-	</h2>
+    </h2>
   </li>
 <% end %>
 </ul> 
+

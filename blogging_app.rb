@@ -12,6 +12,7 @@ require './models.rb'
 # Configuration 
 # 
 set :database, "sqlite3:///blog.sqlite3"
+set :sessions, true 
 
 # Routes 
 # 
@@ -25,6 +26,7 @@ end
 
 get '/' do 
 	@posts = Post.order("created_at DESC")
+
 	erb :home
 end 
 
@@ -37,43 +39,51 @@ get '/signup' do
 end 
 
 post '/sign_up' do
-	@user = User.create(params[:user])
-	flash[:notice] = "Welcome to MicroBlogger."
-	erb :home
-end
-=begin
+	@user = User.new(params[:user])
 	if @user.valid?
 		@user.save
-		redirect '/home'
+		flash[:notice] = "Welcome to MicroBlogger."
+		redirect '/'
 	else
-		erb :signup
-		flash[:alert] = "#{@errors.values}" 
+		flash[:notice] = @errors.values
+		redirect '/signup'
 	end
-=end
-
-
+end
 
 post '/sign_in' do
 	@user = User.where(username: params[:username]).first
-	if  @user.password == params[:password]
+	if @user && ( @user.password == params[:password] )
+		session[:user_id] = @user.id
 		flash[:notice] = "Login successful."
-		erb :home
+		redirect '/'
 	else 
-		flash[:alert] = "Incorrect username or password."
-		erb :log_in
+		flash[:notice] = @errors.values
+		redirect '/login'
 	end
 end
 
 post '/create_post' do
-	@post = Post.create(params[:post])
-	flash[:notice] = "Posted successfully."
-	erb :home
-end
-=begin	
+	@post = Post.new(params[:post])
 	if @post.valid?
 		@post.save
-		redirect'/home'
+		flash[:notice] = "Posted successfully."
+		redirect'/'
 	else
-		erb :create
-		flash[:alert] = "#{@errors.values}"
-=end
+		redirect '/create'
+		flash[:notice] = @errors.values
+	end
+end
+
+get '/logout' do
+	session[:user_id] = nil
+	redirect '/'
+end
+
+
+# Helpers 
+# 
+def current_user 
+	if session[:user_id]
+		@current_user = User.find(session[:user_id])
+	end	
+end

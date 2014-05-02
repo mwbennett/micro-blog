@@ -10,13 +10,31 @@ h1 {
 	padding: 50px 0 50px 0;
 	text-align: center;
 }
+h2 span {
+  font-size: 12pt;
+  font-style: italic;
+}
 html {
-	background-color:lightgrey; 
+	background-color:#f8f7f3; 
 	margin:none;
 }
+input {
+  margin:10px;
+  padding:4px;
+}
 li a { 
-	text-decoration: none;
 	color:slategrey;
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+p {
+  font: 12pt arial;
+  padding: 0 10px 0 10px;
+}
+textarea {
+
 }
 .create {
 	text-align:center;
@@ -35,10 +53,15 @@ li a {
 	width:80px;
 }
 .nav_bar {
-	color:slategrey;
-	height:50px;
+	color: slategrey;
+	height: 50px;
 	background-color: lightblue;
 	font: bold 13pt arial;
+}
+.notice{
+  background-color: yellow;
+  height: 50px;
+  width: 500px;
 }
 #content {
 	max-width: 1000px;

@@ -2,11 +2,11 @@
 
 <form class="create" method="POST" action="/create_post">
 	
-	<label for="title">Title</label>
-	<input type="text" name="post_title">
+	<label class="post_label" for="title">Title</label><br>
+	<textarea class="post_input title" type="text" name="post[title]"></textarea><br>
 	
-	<label for="body">Body</label>
-	<input type="text" name="post_body">
+	<label class="post_label" for="body">Body</label><br>
+	<textarea class="post_input body" type="text" name="post[body]"></textarea><br>
 	
 	<input type="submit">
-</form>
+</form> 
