@@ -1,8 +1,10 @@
 <html>
+	
 	<head>
 		<link rel="stylesheet" type="text/css" href="styles.css">
-		<title>MicroBlogger</title>
+		<title><%= title %></title>
 	</head>
+	
 	<body>
 		<div id="container">
 			<div id="header">
@@ -33,15 +35,16 @@
 				</div>
 			</div>
 			<div id="content">
-				<%= yield %> <!--this is where all the contents of home.erb get added-->
 				<% if flash[:notice] %>
 					<div class="notice">
 						<%= flash[:notice] %>
 					</div>
 				<% end %>
+				<%= yield %> <!--this is where all the contents of home.erb get added-->
 			</div>
 			<div id="footer">
 			</div>
 		</div>
 	</body>
+
 </html>

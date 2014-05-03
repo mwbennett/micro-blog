@@ -1,0 +1,11 @@
+<h1><%= @post.title %></h1>
+<h3>By: <%= @post.user %></h3>
+<p><%= @post.body %></p> 
+<ul>
+  <li>
+    <a href="/posts/<%= @post.id %>/edit">Edit</a>
+  </li>
+  <li>
+    <%= delete_post_button(@post.id) %>
+  </li>
+</ul>

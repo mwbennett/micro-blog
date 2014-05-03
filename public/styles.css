@@ -25,12 +25,13 @@ input {
 }
 label {
   font-family: Tahoma, sans-serif;
-  font-size: 14pt;
+  font-size: 11pt;
 }
 li a { 
 	color:slategrey;
   text-decoration: none;
 }
+
 li {
   list-style-type: none;
 }
@@ -48,12 +49,6 @@ textarea {
   font-family: Tahoma, sans-serif;
   background-color: #f8f7f3;
 }
-textarea .title {
-  height: 20px;
-}
-.author_name {
-  color: #EE9A4D;
-}
 .create {
 	text-align:center;
 }
@@ -61,8 +56,26 @@ textarea .title {
 	text-align: center;
 }
 .post_date {
-  font-style: italic;
-  font-size: 10pt;
+  font-style: normal;
+  font-size: 12pt;
+  float:right;
+}
+.post_details {
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 0;
+}
+.post_author:hover {
+  text-decoration: underline;
+}
+.post_author {
+  color: #EE9A4D;
+}
+.post_title {
+  color:black;
+}
+.post_title:hover {
+  text-decoration: underline;
 }
 .nav {
 	float:right;
@@ -81,10 +94,19 @@ textarea .title {
 	font: bold 13pt arial;
 }
 .notice{
-  background-color: yellow;
+  color:darkred;
   height: 50px;
   line-height: 50px;
   width: 500px;
+}
+.title {
+  width: 600px;
+  border: 3px solid #cccccc;
+  padding: 5px;
+  margin: 10px auto;
+  font-size: 10pt;
+  font-family: Tahoma, sans-serif;
+  background-color: #f8f7f3;
 }
 #content {
 	max-width: 1000px;

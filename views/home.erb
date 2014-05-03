@@ -1,15 +1,15 @@
-<h1><%= @current_user.first_name if @current_user %>Welcome to MicroBlogger
+<h1><%= current_user.first_name if @current_user %>Welcome to MicroBlogger
 </h1> 
 
-<ul>
+<ul class="post_details">
 <% @posts.each do |post| %>
   <div class="post_div">
     <li>
-      <h2><%= post.title %> <span class="post_date"><%= post.created_at.strftime("%b %d, %Y") %></span>
-        <h4>by 
-          <span class="author_name"><%= User.find(post.user_id).username %></span>
-        </h4>
-      </h2>
+      <a href="/posts/<%= post.id %>"><span class="post_title"><h2><%= post.title %></h2></a>
+      <span class="post_date"><%= post.created_at.strftime("%b %d, %Y") %></span>
+      <h4>by <a href="/users/<%= post.user.id %>"><span class="post_author"><%= User.find(post.user_id).username %></span></a>
+      </h4>
+      <hr>
     </li>
   </div>
 <% end %>

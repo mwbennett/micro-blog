@@ -1,0 +1,15 @@
+<h1><%= @user.username %></h1>
+<h3>Recent Blog Posts</h3>
+
+<% @user.posts.each do |post| %>
+  <div class="post_div">
+    <li>
+      <h2>
+        <a href="/posts/<%= post.id %>"><%= post.title %></a>
+        <span class="post_date"><%= post.created_at.strftime("%b %d, %Y") %></span>
+        <p><%= post.body %></p>
+      </h2>
+      <hr>
+    </li>
+  </div>
+<% end %>
