@@ -62,14 +62,16 @@ get '/posts/:id' do
 end
 
 # get the edit user form for the user with the given id 
-get 'users/:id/edit' do
+get '/users/:id/edit' do
 	@user = User.find(params[:id])
 	@title = "Edit Profile"
 	erb :"users/edit"
 end
 
+
 # get the edit post form for the post with the given id
-get 'posts/:id/edit' do
+get '/posts/:id/edit' do
+	puts "flfjbeowbe"
 	@post = Post.find(params[:id])
 	@title = "Edit Post" 
 	erb :"posts/edit"
@@ -84,7 +86,7 @@ end
 # put request to edit the content of the user's profile. If successful, 
 # redirect to the user's profile. If not, reload the edit form with 
 # the user content still in memory 
-put 'users/:id' do
+put '/users/:id' do
 	@user = User.find(params[:id])
 	if @user.update_attributes(params[:user])
 		redirect "/users/#{@user.id}"
@@ -96,7 +98,7 @@ end
 # put request to edit the content of the post. If successful, 
 # redirect to the post's page. If not, reload the edit form with 
 # the post content still in memory 
-put 'posts/:id' do 
+put '/posts/:id' do 
 	@post = Post.find(params[:id])
 	if @post.update_attributes(params[:post])
 		redirect "/posts/#{@post.id}"
@@ -150,7 +152,7 @@ post '/create_post' do
 end
 
 # deletes post with a given id and redirects to homepage 
-delete 'posts/:id' do
+delete '/posts/:id' do
 	@post = Post.find(params[:id]).destroy
 	redirect '/'
 end

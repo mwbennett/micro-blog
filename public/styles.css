@@ -111,6 +111,7 @@ textarea {
 #content {
 	max-width: 1000px;
 	margin: 0 auto;
+  padding: 0 50px;
 	background-color: #E0F8F7;
 	min-height: 100%;
   text-align: left;
