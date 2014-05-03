@@ -3,10 +3,11 @@ class User < ActiveRecord::Base
 	has_many :comments
 	has_many :relationships
 
+=begin
 	attr_accessor :errors
 
 	def valid?
-		unless self.first_name_valid? && self.last_name_valid? && self.email_valid? && self.username_valid? && self.password_valid?
+		unless first_name_valid? && last_name_valid? && email_valid? && username_valid? && password_valid?
 			return false
 		end		
 	end
@@ -38,15 +39,17 @@ class User < ActiveRecord::Base
 			return false
 		end
 	end 
+=end
 end
 
 class Post < ActiveRecord::Base 
 	belongs_to :user
 
+=begin
 	attr_accessor :errors
 
 	def valid?
-		unless self.body_valid? && self.title_valid?
+		unless body_valid? && title_valid?
 			return false
 		end		
 	end
@@ -64,7 +67,7 @@ class Post < ActiveRecord::Base
 			return false
 		end
 	end			
-
+=end
 end
 
 class Relationship < ActiveRecord::Base 

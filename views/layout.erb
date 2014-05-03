@@ -14,17 +14,17 @@
 						<li>
 							<a href="/about">about</a>
 						</li>
-						<li>
-							<a href="/create">create</a>
-						</li>
-						<li>
-							<a href="/signup">sign up</a>
-						</li>
 						<% if current_user %>
 							<li>
-								<a href="/logout">log out</a>
+								<a href="/create">create</a>
+							</li>
+							<li>
+								<a href="/logout">logout</a>
 							</li>
 						<% else %>
+							<li>
+								<a href="/signup">sign up</a>
+							</li>
 							<li>
 								<a href="/login">log in</a>
 							</li>

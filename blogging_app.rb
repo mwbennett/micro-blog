@@ -39,38 +39,37 @@ get '/signup' do
 end 
 
 post '/sign_up' do
-	@user = User.new(params[:user])
-	if @user.valid?
-		@user.save
+	@user = User.create(params[:user])
+	if @user
+		session[:user_id] = @user_id
 		flash[:notice] = "Welcome to MicroBlogger."
 		redirect '/'
 	else
-		flash[:notice] = @errors.values
+		flash[:notice] = "Please complete all fields."
 		redirect '/signup'
 	end
 end
 
 post '/sign_in' do
 	@user = User.where(username: params[:username]).first
-	if @user && ( @user.password == params[:password] )
+	if @user.password == params[:password] 
 		session[:user_id] = @user.id
 		flash[:notice] = "Login successful."
 		redirect '/'
 	else 
-		flash[:notice] = @errors.values
+		flash[:notice] = "Login failed."
 		redirect '/login'
 	end
 end
 
 post '/create_post' do
-	@post = Post.new(params[:post])
-	if @post.valid?
-		@post.save
+	@post = current_user.posts.create(params[:post])
+	if @post
 		flash[:notice] = "Posted successfully."
 		redirect'/'
 	else
+		flash[:notice] = "Something went wrong."
 		redirect '/create'
-		flash[:notice] = @errors.values
 	end
 end
 
@@ -84,6 +83,6 @@ end
 # 
 def current_user 
 	if session[:user_id]
-		@current_user = User.find(session[:user_id])
+		@current_user ||= User.find(session[:user_id])
 	end	
 end

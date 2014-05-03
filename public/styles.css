@@ -3,6 +3,7 @@
 body {
 	margin:0;
 	padding:none;
+  background-color:#f8f7f3; 
 }
 h1 {
 	font: bold 32pt arial;
@@ -22,6 +23,10 @@ input {
   margin:10px;
   padding:4px;
 }
+label {
+  font-family: Tahoma, sans-serif;
+  font-size: 14pt;
+}
 li a { 
 	color:slategrey;
   text-decoration: none;
@@ -34,13 +39,30 @@ p {
   padding: 0 10px 0 10px;
 }
 textarea {
-
+  width: 600px;
+  height: 120px;
+  border: 3px solid #cccccc;
+  padding: 5px;
+  margin: 10px auto;
+  font-size: 10pt;
+  font-family: Tahoma, sans-serif;
+  background-color: #f8f7f3;
+}
+textarea .title {
+  height: 20px;
+}
+.author_name {
+  color: #EE9A4D;
 }
 .create {
 	text-align:center;
 }
 .login {
 	text-align: center;
+}
+.post_date {
+  font-style: italic;
+  font-size: 10pt;
 }
 .nav {
 	float:right;
@@ -61,6 +83,7 @@ textarea {
 .notice{
   background-color: yellow;
   height: 50px;
+  line-height: 50px;
   width: 500px;
 }
 #content {
@@ -68,4 +91,6 @@ textarea {
 	margin: 0 auto;
 	background-color: #E0F8F7;
 	min-height: 100%;
+  text-align: left;
 }
+
